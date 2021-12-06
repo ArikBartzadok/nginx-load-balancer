@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  nginx:
+    image: nginx:1.17.6-alpine
+    container_name: nginx
+    ports:
+      - "8000:80" # 8000 da maquina cai na 80 do docker
+
+  node_1:
+    image: nginx:1.17.6-alpine
+    container_name: node_1
+    ports:
+      - "80" # apenas o nginx pode acessar o container
+
+  node_2:
+    image: nginx:1.17.6-alpine
+    container_name: node_2
+    ports:
+      - "80" # apenas o nginx pode acessar o container
